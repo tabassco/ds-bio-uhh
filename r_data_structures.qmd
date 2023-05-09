@@ -1,0 +1,56 @@
+---
+title: "R Basics"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+---
+# R Basics
+
+## Data Structures
+
+### Atomics
+
+* double / float
+```r
+x <- 1
+typeof(x)
+print(x)
+```
+
+* integer
+```r
+x <- 1L
+typeof(x)
+print(x)
+```
+
+* logical
+```r
+x <- TRUE
+typeof(x)
+print(x)
+```
+
+* character
+```r
+x <- "Hello"
+typeof(x)
+print(x)
+```
+
+### Vectors
+* always flat
+* always identical data type for each value
+ -> If they are not equal they will be coerced.
+ 
+```r
+vector <- c(1, 2, 3)
+print(vector)
+```
+
+* can be created with multiple vectors
+```r
+vector <- c(1, 2, 3, c(1, 2, 3))
+print(vector)
+```
