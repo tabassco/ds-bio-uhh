@@ -1,1 +1,1 @@
-# ds-bio-uhh
+# Mini Repetition zum Data Science Kurs für Bio der Uni Hamburg
