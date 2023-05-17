@@ -1,12 +1,6 @@
 ---
 title: "R Basics"
-format:
-  html:
-    code-fold: true
-    code-summary: "Show the code"
 ---
-# R Basics
-
 ## Data Structures
 
 ### Atomics
@@ -54,3 +48,5 @@ print(vector)
 vector <- c(1, 2, 3, c(1, 2, 3))
 print(vector)
 ```
+
+### data.frame
