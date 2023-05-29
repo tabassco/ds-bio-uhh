@@ -1,0 +1,25 @@
+---
+title: "Getting Help"
+---
+## internal help
+
+
+* display manual for command
+```r
+?max
+```
+* search for text in all help
+```r
+??max
+```
+
+* to exit use `q`
+
+## The Internet
+
+There are multiple ways to search for help:
+* [Google](https://google.com)
+* [Stackoverflow](https://stackoverflow.com)
+* R Blogs (usually found via Google)
+
+Use Stackoverflow examples with caution, but as long as you're only scripting and it has the intended effect you should be fine!
