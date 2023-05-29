@@ -4,9 +4,14 @@ title: "Data Science 1 & 2 Repetition"
 
 
 # Content
-
+## R
 [R Basics](01_r_basics.qmd)
 
-This is a Quarto website.
+[Flow Control](02_flow_control.qmd)
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+[Functions and Libraries](03_functions_and_libraries.qmd)
+
+[Getting Help](04_getting_help.qmd)
+
+[Tidyverse](05_tidyverse.qmd)
+## Statistics

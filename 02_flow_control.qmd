@@ -1,0 +1,58 @@
+---
+title: "Flow Control"
+---
+
+## if / else
+* allows conditional branching
+* e.g. useful if you need to perform different operations depending on input type.
+
+```r
+x <- 2
+if ((x %% 2) == 0) {
+    print("Even")
+} else {
+    print("Odd")
+}
+```
+* a simple way to determine if a number is even or odd: Modulo devision and check the remainder.
+
+## loops
+Loops allow to perform the same operation for a set of variables.
+
+### for
+* For loops perform operations on a previosly known amount of items
+* generally preferred to while loops, as they can't run infinitly
+```r
+vec <- c(1, 2, 3)
+for (x in vec) {
+    print(x)
+    if ((x %% 2) == 0) {
+        print("Even")
+    } else {
+        print("Odd")
+    }
+}
+```
+### while
+* perform the same operation while a given condition is not fulfilled.
+
+* this performs the same operation as the for loop in the previous example
+```r
+x <- 1
+while (x <= 3) {
+    print(x)
+    if ((x %% 2) == 0) {
+        print("Even")
+    } else {
+        print("Odd")
+    }
+    x <- x + 1
+}
+```
+
+* CAUTION: Indefinite operation (don't ever do this)
+```r
+while (TRUE) {
+    print("still alive")
+}
+```

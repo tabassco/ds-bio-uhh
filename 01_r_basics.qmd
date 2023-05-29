@@ -50,3 +50,12 @@ print(vector)
 ```
 
 ### data.frame
+* is the defacto default for all general R data operations
+* is much more flexible than a matrix
+* can be described of a table where each column is made up of a vector
+* every column can have a different data type yet it needs to be coherent within the column
+
+```r
+df <- data.frame(c(1, 2, 3), c("a", "b", "c"))
+print(df)
+```

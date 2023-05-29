@@ -1,0 +1,67 @@
+---
+title: "Functions and Libraries"
+---
+## Functions
+
+* functions allow you to perform a set of operations without repeating yourself.
+* general principle in programming: DRY - Don't Repeat Yourself
+* from the example in chapter 2: check a number for evenness
+
+```r
+is_even <- function(x) {
+    if ((x %% 2) == 0) {
+        print("Even")
+    } else {
+        print("Odd")
+    }
+}
+
+number <- 1
+is_even(number)
+```
+
+```r
+vec <- c(1, 2, 3)
+for (x in vec) {
+    is_even(x)
+}
+
+```
+
+## Libraries
+
+* libraries provide "external" functionality
+
+Good examples:
+* general purpose
+    * dplyr
+    * purrr
+    
+* plotting
+    * ggplot2
+
+* statistics
+    * stats
+
+* interactive plots and website
+    * shiny
+
+```r
+library(stats)
+var(x=c(1, 2, 3), y=c(1, 2, 3))
+```
+or:
+```r
+stats::var(x=c(1, 2, 3), y=c(1, 2, 3))
+```
+
+## Standard Library
+R has a powerful standard library. This contains all functions that can be used without importing other libraries.
+
+Examples:
+```r
+vec <- c(1, 2, 3)
+max(vec)
+min(vec)
+print(vec)
+```
