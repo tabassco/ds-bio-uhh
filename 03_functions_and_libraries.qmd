@@ -32,6 +32,13 @@ for (x in vec) {
 
 * libraries provide "external" functionality
 
+Installing:
+```r
+install.packages("tidyverse")
+
+install.packages(c("rlang", "ggplot2"))
+```
+
 Good examples:
 * general purpose
     * dplyr

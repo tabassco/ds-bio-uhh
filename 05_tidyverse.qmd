@@ -1,4 +1,103 @@
 ---
 title: "TidyVerse"
 ---
-## internal help
+## dplyr
+
+## tidyr
+### dealing with NA
+```r
+library(tidyr)
+data <- data.frame(col_1=c(1, 2, 3), col_2=c(1, NA, 3))
+
+tidyr::drop_na(data)
+
+data %>% tidyr::fill(col_2, .direction="up")
+tidyr::fill(data, col_2, .direction="down")
+
+tidyr::replace_na(data, replace=list(col_2=400))
+```
+### pivoting
+* extremely useful in preparing data for plots
+* most times a long or wide format is needed and you have the other one.
+
+```r
+iris_long <- pivot_longer(
+  data = iris, 
+  cols = Sepal.Length:Petal.Width, 
+  names_to = "Leaf.Param", 
+  values_to = "Size"
+)
+```
+
+```r
+long_df <- data.frame(name = c("Tim", "Ela", "Tim", "Ela"), ident = c(1, 1, 2, 2), value = c(5, 6, 7, 8))
+
+wide_df <- tidyr::pivot_wider(
+    data = long_df,
+    names_from = name,
+    values_from = value 
+)
+```
+
+### splitting and combining columns
+```r
+df <- data.frame(ident_1 = c("leaf", "leaf", "bark"), ident_2 = c("width", "length", "depth"), value = c(1, 2, 3))
+
+united_df <- tidyr::unite(df, ident_1, ident_2, col="ident", sep="-")
+
+split_df <- tidyr::separate(united_df, ident, into = c("ident_1", "ident_2"))
+
+# or using the pipe notation
+library(tidyverse)
+
+# using the tidyverse pipe
+split_df <- df %>% tidyr::unite(ident_1, ident_2, col="ident", sep="-") %>% tidyr::separate(ident, into=c("ident_1", "ident_2"))
+# using the R standard pipe (only valid after R Version 4.0.0)
+split_df <- df |> tidyr::unite(ident_1, ident_2, col="ident", sep="-") |> tidyr::separate(ident, into=c("ident_1", "ident_2"))
+
+```
+
+## dplyr
+### row manipulation
+**Ordering and Arranging**
+
+```r
+fish_growth <- tibble::tibble(
+  species = c("Gadus morhua", "Platichthys flesus", "Pleuronectes platessa",
+    "Merlangius merlangus", "Merluccius merluccius"),
+  linf = c(110, 40.8, 54.4, 41.3, 81.7),
+  k = c(0.4, 0.4, 0.1, 0.2, 0.1)
+)
+
+dplyr::arrange(fish_growth, linf)
+
+dplyr::arrange(fish_growth, desc(k), linf)
+```
+**Filtering**
+```r
+dplyr::filter(fish_growth, k==0.1)
+dplyr::filter(fish_growth, k %in% c(0.1, 0.4))
+```
+
+### column manipulation
+**selecting columns**
+```r
+dplyr::select(fish_growth, species)
+dplyr::select(fish_growth, -species)
+?dplyr::select
+```
+
+**renaming columns**
+```r
+dplyr::rename(fish_growth, fishies=species)
+```
+
+### summary
+
+### grouping
+
+### combining tables
+
+## ggplot2
+
+## 

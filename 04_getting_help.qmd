@@ -15,6 +15,15 @@ title: "Getting Help"
 
 * to exit use `q`
 
+## vignettes
+* kind of a package manual
+
+find with:
+```r
+vignette("dplyr")
+browseVignettes("dplyr")
+```
+
 ## The Internet
 
 There are multiple ways to search for help:
